@@ -1,4 +1,4 @@
-package com.example.longscale
+package me.hoppipolla.longscale
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
