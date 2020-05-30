@@ -15,12 +15,14 @@ dependencies:
   cached_network_image:
   equatable:
   shared_preferences:
+  table_calendar:
 
   # Utils
   intl:
   path_provider:
   uuid:
   http:
+  event_bus:
 
 dev_dependencies:
   flutter_test:

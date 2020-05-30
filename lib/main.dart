@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'dashboard/dashboard_page.dart';
+import 'main/main_page.dart';
 import 'login/login_page.dart';
 import 'shared/page_names.dart';
-import 'until/until_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,10 +25,8 @@ class MyApp extends StatelessWidget {
     switch (settings.name) {
       case PageNames.login:
         return MaterialPageRoute(builder: (context) => LoginPage());
-      case PageNames.dashboard:
-        return MaterialPageRoute(builder: (context) => DashboardPage());
-      case PageNames.until:
-        return MaterialPageRoute(builder: (context) => UntilPage());
+      case PageNames.main:
+        return MaterialPageRoute(builder: (context) => MainPage());
       default:
         return MaterialPageRoute(builder: (context) => LoginPage());
     }
@@ -46,7 +43,7 @@ class MyApp extends StatelessWidget {
 //   // This class is the configuration for the state. It holds the values (in this
 //   // case the title) provided by the parent (in this case the App widget) and
 //   // used by the build method of the State. Fields in a Widget subclass are
-//   // always marked "final".
+//   // always marked 'final'.
 
 //   final String title;
 
@@ -90,9 +87,9 @@ class MyApp extends StatelessWidget {
 //           // arranges them vertically. By default, it sizes itself to fit its
 //           // children horizontally, and tries to be as tall as its parent.
 //           //
-//           // Invoke "debug painting" (press "p" in the console, choose the
-//           // "Toggle Debug Paint" action from the Flutter Inspector in Android
-//           // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+//           // Invoke 'debug painting' (press 'p' in the console, choose the
+//           // 'Toggle Debug Paint' action from the Flutter Inspector in Android
+//           // Studio, or the 'Toggle Debug Paint' command in Visual Studio Code)
 //           // to see the wireframe for each widget.
 //           //
 //           // Column has various properties to control how it sizes itself and

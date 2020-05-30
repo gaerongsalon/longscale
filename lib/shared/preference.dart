@@ -28,10 +28,10 @@ class Preference {
 
     final auth = await account.authentication;
     this._userId = await this
-        ._initializeOrGet("userId", ifAbsent: () => Uuid().v4().toString());
+        ._initializeOrGet('userId', ifAbsent: () => Uuid().v4().toString());
     this._userToken = auth.accessToken;
     this._userName = await this
-        ._initializeOrGet("userName", ifAbsent: () => account.displayName);
+        ._initializeOrGet('userName', ifAbsent: () => account.displayName);
     this._userImageUrl = this._internal.getString('userImageUrl');
 
     print('Preference is ready.');

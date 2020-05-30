@@ -6,6 +6,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import '../shared/page_names.dart';
 import '../shared/preference.dart';
 import './google_sign_in.dart';
+import './waiting_view.dart';
 
 class LoginPage extends StatefulWidget {
   static const String routeName = PageNames.login;
@@ -16,8 +17,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool _authenticating = true;
-
   @override
   void initState() {
     super.initState();
@@ -25,9 +24,7 @@ class _LoginPageState extends State<LoginPage> {
       if (previous == null) {
         getGoogleSignIn().signIn().then((account) {
           if (account == null) {
-            this.setState(() {
-              this._authenticating = false;
-            });
+            this.setState(() {});
           } else {
             this._warmUpAndStart(account);
           }
@@ -40,36 +37,11 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    if (this._authenticating) {
-      return Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: Image.asset('assets/images/avatar.png', width: 240),
-        ),
-      );
-    } else {
-      return Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              Image.asset('assets/images/avatar.png', width: 240),
-              RaisedButton(
-                child: Text('로그인'),
-                onPressed: () {
-                  print('로그인');
-                },
-              )
-            ],
-          ),
-        ),
-      );
-    }
+    return WaitingView();
   }
 
   Future<void> _warmUpAndStart(GoogleSignInAccount account) async {
     await Preference().warmUp(account);
-    await Future.delayed(Duration(seconds: 1));
-    Navigator.of(context).pushReplacementNamed(PageNames.dashboard);
+    Navigator.of(context).pushReplacementNamed(PageNames.main);
   }
 }

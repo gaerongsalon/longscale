@@ -5,13 +5,13 @@ import './counter.dart';
 import './profile.dart';
 import './until.dart';
 
-class Dashboard with EquatableMixin {
+class Document with EquatableMixin {
   final String id;
   Profile profile;
   List<Counter> counters;
   List<Until> untils;
 
-  Dashboard(
+  Document(
       {@required this.id, this.counters = const [], this.untils = const []});
 
   @override

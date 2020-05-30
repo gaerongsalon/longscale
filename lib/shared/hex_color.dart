@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// String is in the format "aabbcc" or "ffaabbcc" with an optional leading "#".
+/// String is in the format 'aabbcc' or 'ffaabbcc' with an optional leading '#'.
 Color colorFromHex(String hexString) {
   final buffer = StringBuffer();
   if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
